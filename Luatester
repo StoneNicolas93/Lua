@@ -1,0 +1,50 @@
+--Lua Inject Tester for Roblox
+
+-- Inject this code, if it says Hello World, then it says Hello Friends, your injector is Lua Compatible!
+
+-- Farewell Infortality.
+-- Version: 2.82
+-- Instances:
+local empty = Instance.new("ScreenGui")
+local bg = Instance.new("Frame")
+local label = Instance.new("TextLabel")
+--Properties:
+empty.Name = "empty"
+empty.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+empty.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+bg.Name = "bg"
+bg.Parent = empty
+bg.BackgroundColor3 = Color3.new(0, 0, 0)
+bg.Position = UDim2.new(0.504166722, 0, 0.353719354, 0)
+bg.Size = UDim2.new(0, 529, 0, 321)
+
+label.Name = "label"
+label.Parent = bg
+label.BackgroundColor3 = Color3.new(0.501961, 0, 0.00784314)
+label.BackgroundTransparency = 1
+label.Position = UDim2.new(0.323251396, 0, 0.358255446, 0)
+label.Size = UDim2.new(0, 200, 0, 50)
+label.Font = Enum.Font.SciFi
+label.Text = "Hello World"
+label.TextColor3 = Color3.new(0.988235, 0.00392157, 0.027451)
+label.TextScaled = true
+label.TextSize = 14
+label.TextWrapped = true
+-- Scripts:
+function SCRIPT_OILG86_FAKESCRIPT() -- label.Script 
+	local script = Instance.new('Script')
+	script.Parent = label
+	--Variables
+	local target = script.Parent
+	
+	--MainScript
+	
+	while true do
+		target.Text = ("Hello World")
+		wait (4)
+		target.text = ("Hello Friends!")
+	end
+
+end
+coroutine.resume(coroutine.create(SCRIPT_OILG86_FAKESCRIPT))
